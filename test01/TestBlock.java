@@ -50,10 +50,6 @@ public class TestBlock extends BlockContainer {
     {
         return false;
     }
-	
-    //手上圖樣
-    public void registerIcons(IconRegister icon) {
-            this.blockIcon = icon.registerIcon("/textures/blocks/stone.png");
-    }
+
 
 }
