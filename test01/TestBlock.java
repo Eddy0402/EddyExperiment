@@ -2,14 +2,16 @@ package EddyExperiment.test01;
 
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 public class TestBlock extends BlockContainer {
 
 	public TestBlock(int par1, Material par2Material) {
 		super(par1, par2Material);
-		// TODO Auto-generated constructor stub
+
 	}
 
 	@Override
@@ -29,9 +31,29 @@ public class TestBlock extends BlockContainer {
             return false;
     }
 
+    //碰撞箱
+    @Override
+    public void setBlockBoundsBasedOnState(IBlockAccess par1IBlockAccess, int par2, int par3, int par4)
+    {
+          this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.2F, 1.0F);
+    }
+    
+    //當此方塊成為物品時的邊界
+    @Override
+    public void setBlockBoundsForItemRender()
+    {
+         this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.2F, 1.0F);
+    }
+    
 	@Override
     public boolean renderAsNormalBlock()
     {
         return false;
     }
+	
+    //手上圖樣
+    public void registerIcons(IconRegister icon) {
+            this.blockIcon = icon.registerIcon("/textures/blocks/stone.png");
+    }
+
 }

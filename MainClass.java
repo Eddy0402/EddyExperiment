@@ -29,7 +29,7 @@ public class MainClass {
 		    TestBlock = new EddyExperiment.test01.TestBlock(1024, Material.rock);
 		    TestBlock.setUnlocalizedName("TestBlock");
 		    //1.6 TestBlock.func_111022_d("TestBlock");
-		    TestBlock.setLightValue(15.0f);
+		    TestBlock.setLightValue(1.0f);
 		    TestBlock.setCreativeTab(CreativeTabs.tabDecorations);
 		  	GameRegistry.registerBlock(TestBlock, "´ú¸Õ");
 		    LanguageRegistry.addName(TestBlock, "Techne´ú¸Õ¤è¶ô");
