@@ -1,5 +1,6 @@
 package EddyExperiment.test01;
 
+import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -49,6 +50,7 @@ public class TestBlock extends BlockContainer {
     public boolean renderAsNormalBlock()
     {
         return false;
+        
     }
 
 

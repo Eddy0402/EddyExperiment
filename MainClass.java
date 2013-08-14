@@ -1,7 +1,6 @@
 package EddyExperiment;
 
-import EddyExperiment.test01.TileEntityTestBlockEntity;
-import EddyExperiment.test01.TileEntityTestBlockRenderer;
+import EddyExperiment.test01.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -14,9 +13,10 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 
-@Mod(modid="eddy", name="EddyExperiment", version="0.1")
+@Mod(modid="eddytest01", name="EddyExperimentT01", version="0.1")
 @NetworkMod(clientSideRequired=true, serverSideRequired=false)
 public class MainClass {
 	
@@ -33,21 +33,29 @@ public class MainClass {
 		    TestBlock.setCreativeTab(CreativeTabs.tabDecorations);
 		  	GameRegistry.registerBlock(TestBlock, "´ú¸Õ");
 		    LanguageRegistry.addName(TestBlock, "Techne´ú¸Õ¤è¶ô");
+	       
 	  }
 	  
 
 	  @Mod.Init
 	  public void load(FMLInitializationEvent event) 
 	  {
-		  ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTestBlockEntity.class, new TileEntityTestBlockRenderer());
+		  registryRenderer();
+		  
 		  GameRegistry.registerTileEntity(TileEntityTestBlockEntity.class,"tileEntityTestBlock");
-
 	  }
 	  
 	  @Mod.PostInit
 	  public void postInit(FMLPostInitializationEvent evt)
 	  {
 
+	  }
+	  
+	  @SideOnly(Side.CLIENT)
+	  protected void registryRenderer(){
+		  
+		  ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTestBlockEntity.class, new TileEntityTestBlockRenderer());
+		  
 	  }
 
 
