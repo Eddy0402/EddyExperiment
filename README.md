@@ -1,4 +1,4 @@
-﻿EddyExperiment
+﻿MinecraftForgeExperiment 
 ==========================================
 
 只是小小的實驗區，src code請隨意取用:D
